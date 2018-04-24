@@ -1,4 +1,0 @@
-list1 = list(input("输入列表"))
-number=len(list1)
-list2 = [list1[i] for i in range(number) if isinstance(list1[i], int)]
-print(list2)
