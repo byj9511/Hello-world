@@ -26,3 +26,9 @@ file_name = input('请输入文件名：')
 re_word = input('请输入需要替换的单词或字符：')
 new_word = input('请输入新的单词或字符：')
 word_replace(file_name, re_word, new_word)
+'''f=open('2.txt')
+#2.txt内容为（网二）
+#只能seek到汉字的起始位置
+f.seek(2,0)
+#read（1）是一下子打印一个汉字
+print(f.read(1))'''
