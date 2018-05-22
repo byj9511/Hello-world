@@ -1,0 +1,21 @@
+import os
+
+files_list = list()
+
+
+def file_exist(file_name,start_path):
+    os.chdir(start_path)
+    files_list = os.listdir(os.curdir)
+    for each_file in files_list:
+        if file_name == each_file:
+            print(os.getcwd()+os.sep+each_file+os.linesep)
+        if os.path.isdir(each_file):
+          #进行递归搜索
+            file_exist(file_name,os.getcwd()+os.sep+each_file)
+            os.chdir(os.pardir)
+
+#文件名
+file_name = '1.txt'
+#搜索起始位置
+start_path = 'f:/python'
+file_exist(file_name,start_path)
