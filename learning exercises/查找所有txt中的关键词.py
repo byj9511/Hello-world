@@ -52,3 +52,56 @@ def search_files(key,detail):
 key = input('请将脚本防御到查找的文件夹内，请输入关键字：')
 detail = input('请问是否需要打印关键字【%s】在文件中的具体位置（YES/NO）：'%key)
 search_files(key,detail)
+
+#自己编写：
+# import os
+# 
+# 
+# def find_txt(key, detail):
+#     txt_path = []
+#     # 用os.getcwd()而不用os.curdir是因为能显示绝对路径，比较直观
+#     all_files = os.walk(os.getcwd())
+#     for dir_date in all_files:
+#         for each_file in dir_date[2]:
+#             if os.path.splitext(each_file)[1] == '.txt':
+#                 txt_path.append(os.path.join(dir_date[0], each_file))
+#     for each_file_path in txt_path:
+#         each_file_dict = search_in_file(each_file_path, key)
+#         if each_file_dict:
+#             print('位置：%s' % each_file_path)
+#             if detail in ['YES', 'Yes', 'yes']:
+#                 print_pos(each_file_dict)
+# 
+# 
+# def search_in_file(path, key):
+#     each_file_dict = {}
+#     count = 0
+#     file = open(path)
+#     for each_line in file:
+#         count += 1
+#         # 如果一行中包含了key，才执行查找位置命令
+#         if key in each_line:
+#             each_file_dict[count] = search_in_line(each_line, key)
+#     return each_file_dict
+# 
+# 
+# def print_pos(each_file_dict):
+#     if each_file_dict:
+#         for i in each_file_dict:
+#             print('第%d行，位置：' % i, (each_file_dict[i]))
+# 
+# 
+# def search_in_line(each_line, key):
+#     start = each_line.find(key)
+#     start_list = []
+#     while start != -1:
+#         start_list.append(start)
+#         start = each_line.find(key, start + 1)
+# 
+#     return start_list
+# 
+# 
+# # path=['e:/python/working directory/1.txt']
+# key = 'more'
+# detail = 'yes'
+# find_txt(key, detail)
